@@ -65,7 +65,7 @@ func (t *Text) GetStructure() *node.Node[core.Structure] {
 func (t *Text) GetHeight(provider core.Provider, cell *entity.Cell) float64 {
 	lines := provider.GetLinesQuantity(t.value, &t.prop, cell.Width-t.prop.Left-t.prop.Right)
 	height := provider.GetTextHeight(&props.Font{Family: t.prop.Family, Style: t.prop.Style, Size: t.prop.Size, Color: t.prop.Color})
-	return (float64(lines) * height) + t.prop.Top + float64(lines-1)*t.prop.VerticalPadding
+	return (float64(lines) * height) + t.prop.Top + float64(lines)*t.prop.VerticalPadding
 }
 
 // SetConfig sets the config.
