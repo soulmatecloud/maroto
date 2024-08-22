@@ -142,12 +142,12 @@ func (s *text) getLinesBreakingLineWithDash(words string, colWidth float64) []st
 
 	lines := []string{}
 
-	dashSize := s.pdf.GetStringWidth(" - ")
+	dashSize := s.pdf.GetStringWidth("-")
 
 	var content string
 	for _, letter := range words {
 		if currentlySize+dashSize > colWidth-dashSize {
-			content += "-"
+			content += ""
 			lines = append(lines, content)
 			content = ""
 			currentlySize = 0
